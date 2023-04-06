@@ -6,25 +6,23 @@ import { Main } from '@/layouts/Main'
 import { Meta } from '@/layouts/Meta'
 import type { NextPageWithLayout } from '@/models'
 
-const Index: NextPageWithLayout = () => {
+const Home: NextPageWithLayout = () => {
   return (
     <Paper
-      elevation={2}
+      elevation={1}
       sx={{ minHeight: '400px', borderRadius: '10px', padding: '20px' }}
     >
-      <Button variant="contained" color="warning">
+      <Button variant="contained" color="primary">
         Test
       </Button>
-      <Typography color="initial">AAAAA</Typography>
+      <Typography variant="h4" color="chocolate" sx={{ marginTop: '20px' }}>
+        AAAAA
+      </Typography>
     </Paper>
   )
 }
-Index.getLayout = function getLayout(page: ReactElement) {
-  return (
-    <Main meta={<Meta title="Recustomer" description="Recustomer" />}>
-      {page}
-    </Main>
-  )
+Home.getLayout = function getLayout(page: ReactElement) {
+  return <Main meta={<Meta title="Home" description="Home" />}>{page}</Main>
 }
 
-export default Index
+export default Home
